@@ -1,0 +1,12 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FullAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FullSubtractor'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/ParallelFlipFlop.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'parallelFlipFlop'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'RippleCarryAdder'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'RippleCarrySubtractor'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/IIR.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'IIR'

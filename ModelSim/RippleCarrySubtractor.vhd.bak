@@ -1,0 +1,42 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+
+--  This VHDL code servesthe substraction of two 16 bits number
+--  Through a Ripple Carry Substraction based on Ripple Carry Adder
+--  That takes CIN = '1' and Operand 1 = not(Operand 1)
+
+-------------------------------- Entity declaration-------------------------
+entity RippleCarryAdder is
+	generic (Nbit : positive := 16);   -- A generic parametere to set the inputs of the Substractor
+	port (
+	a		:	in	std_logic_vector(Nbit-1 downto 0); -- Input : Operand 1
+	b		:	in	std_logic_vector(Nbit-1 downto 0); -- Input : Operand 2
+	cout		:	out	std_logic;				-- Output : Carry output
+	s		:	out	std_logic_vector(Nbit-1 downto 0)	-- Output: Operand 2 - Operand 1
+	);
+end RippleCarryAdder;
+-----------------------------------------------------------------------------
+
+
+architecture arch of RippleCarrySubtractor is	-- Behavioral architecture description
+
+component FullSubtractor is			-- Calling the FullSubstractor
+	port (
+		a		:	in	std_logic;
+		b		:	in	std_logic;
+		cin		:	in	std_logic;
+		s		:	out	std_logic;
+		cout 		:	out 	std_logic
+	);
+end component;
+
+signal carries : std_logic_vector(Nbit downto 0); -- A singal that servers the ripple carries connectinos
+
+begin
+	carries(0) <= '1';
+	GEN: for i in 0 to Nbit-1 generate	-- Generating the sufficient number of FullSubstractors
+		FSx: FullSubtractor port map(a(i), b(i), carries(i), s(i), carries(i+1));
+	end generate GEN;
+	cout <= carries(Nbit);
+end arch;

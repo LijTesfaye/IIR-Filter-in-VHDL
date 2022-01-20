@@ -1,0 +1,18 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+	
+entity FullAdder is                                 	--Entity declaration
+	port (
+	a		:	in	std_logic;	-- Input : Operand 1
+	b		:	in	std_logic;	-- Input : Operand 2
+	cin		:	in	std_logic;	-- Input : Carry IN
+	s		:	out 	std_logic;	-- Output : Operand 1 + Operand 2 
+	cout 		:	out 	std_logic	-- Output : Carry OUT
+	);
+end FullAdder;	
+
+architecture arch of FullAdder is    --- Architectural declaration
+begin
+	s <= a xor b xor cin;       -- Summation
+	cout <= (a and b) or (a and cin) or (b and cin);   -- Carry out
+end arch;

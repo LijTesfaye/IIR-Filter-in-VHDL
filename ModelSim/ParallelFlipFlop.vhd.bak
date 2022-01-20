@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity parallelFlipFlop is   			-- Entity declaration
+		generic(Nbit : integer); 	-- Generic parameter setting the  number of bits of the shift register
+		port(
+                        clk     : in 	std_logic;   	--  Input : Clock
+			d       : in 	std_logic_vector(Nbit - 1 downto 0);  	--  Shift register input
+			q       : out 	std_logic_vector(Nbit - 1 downto 0); 	--  Shift register output 
+			rst_l 	: in 	std_logic   	-- Asynchronous Reset ( Active on low)
+		);
+end parallelFlipFlop;
+
+architecture behavioral of parallelFlipFlop is 	 -- Behavioral architecture description
+
+
+begin
+
+	parallel_dff : process(clk, rst_l) 	
+	begin
+		if(rst_l = '0') then 		-- Asynchronous reset on low		
+			q <= (others => '0'); 	-- Clearing output q
+
+		elsif (rising_edge(clk)) then 	-- Positive edge triggered shift register
+			q <= d; 		-- Output the input				
+		end if;
+	end process;
+
+end behavioral;

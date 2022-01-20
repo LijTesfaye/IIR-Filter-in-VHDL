@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jan  2 20:13:09 2022
+# Process ID: 15340
+# Current directory: C:/Users/KB/Desktop/IIR_AUDIO_FILTER/IIR_FILTER_SYNTHESIS/IIR_FILTER_SYNTHESIS.runs/synth_1
+# Command line: vivado.exe -log IIR.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source IIR.tcl
+# Log file: C:/Users/KB/Desktop/IIR_AUDIO_FILTER/IIR_FILTER_SYNTHESIS/IIR_FILTER_SYNTHESIS.runs/synth_1/IIR.vds
+# Journal file: C:/Users/KB/Desktop/IIR_AUDIO_FILTER/IIR_FILTER_SYNTHESIS/IIR_FILTER_SYNTHESIS.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source IIR.tcl -notrace

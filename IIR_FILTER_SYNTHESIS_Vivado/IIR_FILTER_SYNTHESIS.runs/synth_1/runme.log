@@ -1,0 +1,270 @@
+
+*** Running vivado
+    with args -log IIR.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source IIR.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source IIR.tcl -notrace
+Command: synth_design -top IIR -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2124
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1015.203 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'IIR' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/IIR.vhd:14]
+	Parameter Nbit bound to: 18 - type: integer 
+INFO: [Synth 8-3491] module 'parallelFlipFlop' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/ParallelFlipFlop.vhd:4' bound to instance 'Delayer_x' of component 'parallelFlipFlop' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/IIR.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'parallelFlipFlop' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/ParallelFlipFlop.vhd:14]
+	Parameter Nbit bound to: 18 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'parallelFlipFlop' (1#1) [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/ParallelFlipFlop.vhd:14]
+	Parameter Nbit bound to: 18 - type: integer 
+INFO: [Synth 8-3491] module 'parallelFlipFlop' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/ParallelFlipFlop.vhd:4' bound to instance 'Delayer_x' of component 'parallelFlipFlop' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/IIR.vhd:64]
+	Parameter Nbit bound to: 18 - type: integer 
+INFO: [Synth 8-3491] module 'parallelFlipFlop' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/ParallelFlipFlop.vhd:4' bound to instance 'Delayer_x' of component 'parallelFlipFlop' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/IIR.vhd:64]
+	Parameter Nbit bound to: 18 - type: integer 
+INFO: [Synth 8-3491] module 'RippleCarryAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:4' bound to instance 'Adder' of component 'RippleCarryAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/IIR.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'RippleCarryAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:16]
+	Parameter Nbit bound to: 18 - type: integer 
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-638] synthesizing module 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'FullAdder' (2#1) [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:14]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'FAx' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'RippleCarryAdder' (3#1) [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarryAdder.vhd:16]
+	Parameter Nbit bound to: 18 - type: integer 
+INFO: [Synth 8-3491] module 'parallelFlipFlop' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/ParallelFlipFlop.vhd:4' bound to instance 'Delay_4' of component 'parallelFlipFlop' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/IIR.vhd:77]
+	Parameter Nbit bound to: 18 - type: integer 
+INFO: [Synth 8-3491] module 'RippleCarrySubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:4' bound to instance 'Substractor' of component 'RippleCarrySubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/IIR.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'RippleCarrySubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:15]
+	Parameter Nbit bound to: 18 - type: integer 
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-638] synthesizing module 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:14]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullAdder.vhd:4' bound to instance 'internalFullAdder' of component 'FullAdder' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'FullSubtractor' (4#1) [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:14]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-3491] module 'FullSubtractor' declared at 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/FullSubtractor.vhd:4' bound to instance 'FSx' of component 'FullSubtractor' [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'RippleCarrySubtractor' (5#1) [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/RippleCarrySubtractor.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'IIR' (6#1) [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/VHDL/IIR.vhd:14]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1015.203 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1015.203 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1015.203 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1015.203 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/IIR_FILTER_SYNTHESIS/IIR_FILTER_SYNTHESIS.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [C:/Users/KB/Desktop/IIR_AUDIO_FILTER/IIR_FILTER_SYNTHESIS/IIR_FILTER_SYNTHESIS.srcs/constrs_1/new/constraints.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1051.266 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1051.266 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1051.266 ; gain = 36.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1051.266 ; gain = 36.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1051.266 ; gain = 36.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1051.266 ; gain = 36.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   3 Input      1 Bit         XORs := 36    
++---Registers : 
+	               18 Bit    Registers := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1051.266 ; gain = 36.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1051.266 ; gain = 36.062
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1059.824 ; gain = 44.621
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1063.691 ; gain = 48.488
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1069.457 ; gain = 54.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1069.457 ; gain = 54.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1069.457 ; gain = 54.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1069.457 ; gain = 54.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1069.457 ; gain = 54.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1069.457 ; gain = 54.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     1|
+|3     |LUT2 |     7|
+|4     |LUT3 |    15|
+|5     |LUT4 |     1|
+|6     |LUT5 |    24|
+|7     |LUT6 |    12|
+|8     |FDCE |    64|
+|9     |IBUF |    18|
+|10    |OBUF |    16|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1069.457 ; gain = 54.254
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1069.457 ; gain = 18.191
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1069.457 ; gain = 54.254
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1080.434 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1080.434 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+67 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 1080.434 ; gain = 65.230
+INFO: [Common 17-1381] The checkpoint 'C:/Users/KB/Desktop/IIR_AUDIO_FILTER/IIR_FILTER_SYNTHESIS/IIR_FILTER_SYNTHESIS.runs/synth_1/IIR.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file IIR_utilization_synth.rpt -pb IIR_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Jan  2 20:14:04 2022...

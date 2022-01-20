@@ -1,0 +1,47 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+-------------------------------- Entity declaration---------------------------
+entity FullSubtractor is				
+	port (
+	a		:	in	std_logic;   	-- Input : Operand 1
+	b		:	in	std_logic;	-- Input : Operand 2
+	cin		:	in	std_logic;	-- Input : Carry IN (will be linked to '1') 
+	s		:	out 	std_logic;	-- Output : Operand 2 - Operand 1
+	cout 		:	out 	std_logic	-- Output : Carry out (left open)
+	);
+end FullSubtractor;
+-------------------------------------------------------------------------------
+
+
+-- This FullSubstractor is based of on a FullAdder in fact :
+--  if Cin='1'
+--  not(a) + b + cin = b + (-a) = b-a  because cpl2(a) = not(a) + 1
+
+
+architecture arch of FullSubtractor is			-- Architecture declaration
+
+component FullAdder					-- Calling the component  FullAdder
+	port (
+		a		:	in	std_logic;
+		b		:	in	std_logic;
+		cin		:	in	std_logic;
+		s		:	out 	std_logic;
+		cout 		:	out 	std_logic
+	);
+end component;					-- Signal to affect the inversion ( not(x) )
+
+signal connection : std_logic;
+begin
+
+ 	connection<= not(a);			-- Inversing the Operand 1
+
+	internalFullAdder: FullAdder          -- Portmapping the Fulladder component to resolve the substraction
+	port map(
+		a		=>	connection,
+		b		=>	b,
+		cin		=>	cin,
+		s		=>	s,
+		cout		=>	cout
+	);						
+end arch;

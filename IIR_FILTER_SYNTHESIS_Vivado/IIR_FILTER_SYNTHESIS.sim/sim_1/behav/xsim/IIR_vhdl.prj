@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../VHDL/FullAdder.vhd" \
+"../../../../../VHDL/FullSubtractor.vhd" \
+"../../../../../VHDL/ParallelFlipFlop.vhd" \
+"../../../../../VHDL/RippleCarryAdder.vhd" \
+"../../../../../VHDL/RippleCarrySubtractor.vhd" \
+"../../../../../VHDL/IIR.vhd" \
+
+# Do not sort compile order
+nosort

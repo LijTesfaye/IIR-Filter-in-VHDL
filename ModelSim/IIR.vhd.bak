@@ -1,0 +1,118 @@
+library IEEE;
+use IEEE.std_logic_1164.all; 
+
+-------------------------------- Entity declaration-------------------------
+entity IIR is  		
+	port (
+		clk		:	in	std_logic;			-- Input : Clock
+		rst_l		:	in	std_logic;			-- Input : Asynchronous reset on low
+		X		:	in	std_logic_vector(15 downto 0); 	-- Input : Filter Input on 16 bit
+		Y		:	out	std_logic_vector(15 downto 0)  	-- Output : Filter output on 16 bit
+	);
+end IIR;	
+-----------------------------------------------------------------------------
+
+architecture arch of IIR is	 -- Architectural declaration (behavioral)
+
+-----------------------------------------------------------------------------
+-- Components Instantiation
+-----------------------------------------------------------------------------
+
+component parallelFlipFlop
+	generic (Nbit : positive := 16);	-- Initializing the DFF shift register on number of bits
+	port (
+		clk		:	in	std_logic; 	-- Clock
+		d		:	in	std_logic_vector(Nbit-1 downto 0);	-- Shift register input
+		q		:	out	std_logic_vector(Nbit-1 downto	0);	-- Shift register output
+                rst_l		:	in	std_logic				-- Asynchronous active low reset
+	);
+end component;
+
+
+component RippleCarryAdder
+	generic (Nbit : positive := 16);	-- Initialized RippleCarryAdder bits count
+	port (
+		a		:	in	std_logic_vector(Nbit-1 downto 0);  -- 1st element of sum
+		b		:	in	std_logic_vector(Nbit-1 downto 0);  -- 2nd element of sum
+		cin		:	in	std_logic;				-- Carry in to the adder
+		cout		:	out	std_logic;				-- Carry out of the adder
+		s		:	out	std_logic_vector(Nbit-1 downto 0)  	-- Result of the summation
+	);
+end component;
+
+
+component RippleCarrySubtractor
+	generic (Nbit : positive := 16);	-- Initialized RippleCarrySubstractor bits count
+	port (
+	a		:	in	std_logic_vector(Nbit-1 downto 0);  -- 1st element of substraction
+	b		:	in	std_logic_vector(Nbit-1 downto 0);  -- 2nd element of substraction
+	cout		:	out	std_logic; 				-- Carry out (set Open)
+	s		:	out	std_logic_vector(Nbit-1 downto 0)	-- Result of substraction (s=b-a)
+	);
+end component;
+
+
+-- Since the IIR Filter utilizes 4 delays, the output will
+-- be saved in an array of 18 bits vectors
+
+type samplesArray is array (0 to 4) of std_logic_vector(17 downto 0);  
+
+-----------------------------------------------------------------------------
+-- Signal Declarations
+-----------------------------------------------------------------------------
+
+signal sample	:	samplesArray;  		-- Signals in between delay elemnts
+signal add_Out	:	std_logic_vector(17 downto 0); 	-- Signal for outputting the result of summation
+signal sub_Out	:	std_logic_vector(17 downto 0);  -- Signal for the output of substraction	
+signal mul	:	std_logic_vector(17 downto 0);	--  Carries the result of multiplication by 1/4
+
+------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------
+begin	-- Behavioral
+-----------------------------------------------------------------------------
+
+	
+-- Assigning the to mul the result of multiplication by 1/4 of the input (X * 1/4) which is 2 bit right shift
+	mul <= X(15) & X(15) & X;
+-- Assigning the delayer_1 input the X * 1/4
+	sample(0) <=mul;	
+	
+-- Generation of 3 shift registers to simulate the first 3 delayers of the chain
+	GEN: for i in 0 to 2 generate
+		-- Notice the shift register is mapped on 18 bits to account the overflow within the chain of control
+		Delayer_x: parallelFlipFlop generic map(18) port map(clk, sample(i), sample(i+1),rst_l); 
+	end generate GEN;
+
+-- According to the signal flow diagram this calculates 3 times delayed sample of X + the result of substraction
+	Adder: RippleCarryAdder
+	generic map(18)  -- RippleCarryAdder mapped on 18 bits
+	port map (
+		a		=>	sample(3),
+		b		=>	sub_Out,
+		cin		=>	'0',
+		cout		=>	open,
+		s		=>	add_Out
+	);
+
+-- According to the signal flow diagram this calculates sample(4)- X * 1/4 (mul)
+	Substractor: RippleCarrySubtractor
+	generic map(18) -- RippleCarrySubstractor mapped on 18 bits
+	port map (
+		a		=>	mul,
+		b		=>	sample(4),
+		cout		=>	open,
+		s		=>	sub_Out
+	);
+
+-- This represents the last delay element (4) that delays by one clock the result of the adder
+	Delay_4: parallelFlipFlop
+	generic map(18)
+	port map (clk, add_Out, sample(4), rst_l);
+
+	
+-- Resizing the Output of the last substractor from 18 bits to 16 bits and assinging to the FILTER OUTPUT Y
+	Y <=  sub_Out(15 downto 0);
+	
+end arch;
